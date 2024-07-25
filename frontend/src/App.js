@@ -1,14 +1,13 @@
 import React from 'react';
-import { BrowserRouter as  Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom'; 
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Navbar from './components/Navbar';
 
-
 function App() {
     return (
-       
+      
             <div className="App">
                 <Navbar />
                 <Routes>
@@ -20,4 +19,5 @@ function App() {
        
     );
 }
+
 export default App;
