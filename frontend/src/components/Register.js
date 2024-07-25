@@ -122,7 +122,7 @@ function Register() {
             </form>
             {message && <p className="message">{message}</p>}
             <p>
-                Already have an account? <Link to="/">Login</Link>
+                Already have an account? <Link to="/Login">Login</Link>
             </p>
         </div>
     );
