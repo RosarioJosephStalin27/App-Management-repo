@@ -1,15 +1,19 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap styles are imported
-import workout1 from './assets/workout1.jpeg';
-import workout2 from './assets/workout2.jpeg';
-import workout3 from './assets/workout3.jpeg';
-const images = [workout1, workout2, workout3];
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Styles/AutoCarousel.css'
+// Correct paths to your images
+import workoutImage1 from '../assets/workout1.jpeg';
+import workoutImage2 from '../assets/workout2.jpeg';
+import workoutImage3 from '../assets/work1.jpeg';
+import workoutImage4 from '../assets/work2.jpeg';
+
+const images = [workoutImage1, workoutImage2,workoutImage3,workoutImage4];
 
 const AutoCarousel = () => {
   return (
-    <div style={{ marginTop: '20px' }}>
-      <Carousel interval={3000} style={{ width: '100%', maxWidth: '1200px', margin: 'auto' }}>
+    <div className="carousel-container">
+      <Carousel interval={3000} className="custom-carousel">
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <img className="d-block w-100" src={image} alt={`Slide ${index + 1}`} />
