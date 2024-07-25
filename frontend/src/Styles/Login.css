@@ -1,0 +1,67 @@
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.login-container input, .login-container select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-container button {
+    margin-top: 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+.login-container .error {
+    color: red;
+    font-size: 0.875rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-container .message {
+    color: green;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
