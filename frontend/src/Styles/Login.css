@@ -57,10 +57,12 @@ body{
     color: red;
     font-size: 0.875rem;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .login-container .message {
     color: green;
+    
     font-size: 0.875rem;
     margin-top: 1rem;
     font-family: 'Montserrat', sans-serif;

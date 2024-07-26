@@ -1,10 +1,10 @@
 /* AutoCarousel.css */
 
 .carousel-container {
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
     max-width: 1000px;
-    margin: auto;
+    margin-right: auto;
   }
   
   .custom-carousel .carousel-item img {
