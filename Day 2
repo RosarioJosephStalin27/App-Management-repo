@@ -1,0 +1,222 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import '../Styles/Register.css';
+
+function Register() {
+    const [formData, setFormData] = useState({
+        name: '',
+        dateOfBirth: '',
+        gender: '',
+        email: '',
+        password: ''
+    });
+    const [errors, setErrors] = useState({});
+    const [message, setMessage] = useState('');
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value
+        }));
+    };
+
+    const validate = () => {
+        let validationErrors = {};
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (!formData.name) {
+            validationErrors.name = "Name is required";
+        }
+
+        if (!formData.dateOfBirth) {
+            validationErrors.dateOfBirth = "Date of birth is required";
+        }
+
+        if (!formData.gender) {
+            validationErrors.gender = "Gender is required";
+        }
+
+        if (!formData.email) {
+            validationErrors.email = "Email is required";
+        } else if (!emailPattern.test(formData.email)) {
+            validationErrors.email = "Invalid email format";
+        }
+
+        if (!formData.password) {
+            validationErrors.password = "Password is required";
+        }
+
+        setErrors(validationErrors);
+
+        return Object.keys(validationErrors).length === 0;
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (validate()) {
+            localStorage.setItem('user', JSON.stringify(formData));
+            setMessage("Registration successful. You can now log in.");
+            console.log("Registration successful:", formData);
+        }
+    };
+
+    return (
+        <div className="register-container">
+            <h1>Register</h1>
+            <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                {errors.name && <span className="error">{errors.name}</span>}
+                
+                <label>Date of Birth</label>
+                <input
+                    type="date"
+                    placeholder="Enter your date of birth"
+                    name="dateOfBirth"
+                    value={formData.dateOfBirth}
+                    onChange={handleChange}
+                />
+                {errors.dateOfBirth && <span className="error">{errors.dateOfBirth}</span>}
+                
+                <label>Gender</label>
+                <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                >
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                {errors.gender && <span className="error">{errors.gender}</span>}
+                
+                <label>Email</label>
+                <input
+                    type="email"
+                    placeholder="Enter your Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                {errors.email && <span className="error">{errors.email}</span>}
+                
+                <label>Password</label>
+                <input
+                    type="password"
+                    placeholder="Enter password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                />
+                {errors.password && <span className="error">{errors.password}</span>}
+                
+                <button type="submit">Register</button>
+            </form>
+            {message && <p className="message">{message}</p>}
+            <p>
+                Already have an account? <Link to="/Login">Login</Link>
+            </p>
+        </div>
+    );
+}
+
+export default Register;
+
+
+//css
+
+/* body{
+    background: url(D:\project\frontend\src\assets\regis.jpeg) center fixed;
+} */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(113, 108, 108, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #141313;
+}
+
+.register-container input,
+.register-container select {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.register-container .error {
+    color: red;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.register-container button {
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: rgb(6, 5, 5);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #0a0101;
+}
+
+.register-container .message {
+    text-align: center;
+    margin-top: 1rem;
+    color: green;
+}
+
+.register-container p {
+    text-align: center;
+    margin-top: 1rem;
+    color: #130000;
+}
+
+.register-container p a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container p a:hover {
+    color: #ff6347;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
