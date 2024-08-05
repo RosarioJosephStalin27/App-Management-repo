@@ -1,0 +1,25 @@
+.section {
+    margin-bottom: 20px;
+   
+  }
+  
+.section  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+ .section th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+ .section th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+.section  td {
+    background-color: #fff;
+  }
+  

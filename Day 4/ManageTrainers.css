@@ -1,0 +1,27 @@
+.section12 {
+    margin-bottom: 20px;
+  }
+  
+  /* .trainer-list {
+    margin-top: 20px;
+  } */
+  
+  .section12 table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .section12 th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .section12 th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .section12 td {
+    background-color: #fff;
+  }
+  
