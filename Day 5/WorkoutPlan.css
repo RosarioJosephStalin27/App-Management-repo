@@ -1,0 +1,40 @@
+.workout-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.workout-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px; /* Increased width */
+}
+
+.workout-image {
+  height: 300px; /* Increased height */
+  width: 300px;
+  background-size: cover; /* Or use 'contain' if you want to fit the entire image */
+  background-position: center;
+  background-repeat: no-repeat; /* Ensures no repeat of the image */
+}
+
+.barbell-curl {
+  background-image: url('../assets/Barbell-Curl.gif'); /* Adjust path as needed */
+}
+
+.cardio-blast {
+  background-image: url('../assets/cardioblast.gif');
+}
+
+.strength-training {
+  /* background-image: url('../assets/strength-training.png'); */
+}
+
+.yoga-routine {
+  /* background-image: url('../assets/yoga-routine.png'); */
+}
+
+.workout-info {
+  padding: 1rem;
+}
